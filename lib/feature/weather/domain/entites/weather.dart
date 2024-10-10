@@ -1,19 +1,21 @@
+// ignore_for_file: non_constant_identifier_names
+
 import 'package:equatable/equatable.dart';
 
 class Weather extends Equatable {
 
   final String country ;
   final String region ;
-  final double temp ;
-  final double wind ;
+  final double temp_c ;
+  final double wind_kph ;
   final double uv ;
-  final double humidity;
+  final int humidity;
 
   const Weather({
   required this.country,
    required this.region,
-    required this.temp,
-     required this.wind,
+    required this.temp_c,
+     required this.wind_kph,
       required this.uv,
        required this.humidity });
 
@@ -21,6 +23,6 @@ class Weather extends Equatable {
 
   @override
  
-  List<Object?> get props =>  [country,region,temp,wind,uv,humidity] ;
+  List<Object?> get props =>  [country,region,temp_c,wind_kph,uv,humidity] ;
 
 }

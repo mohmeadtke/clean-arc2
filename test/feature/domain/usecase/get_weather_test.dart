@@ -10,10 +10,10 @@ class FakeWeatherRepo implements WeatherRepo {
     final weather = const Weather(
     country: "country",
     region: "region",
-    temp: 2.5,
-    wind: 2.5,
+    temp_c: 2.5,
+    wind_kph: 2.5,
     uv: 2.5,
-    humidity: 2.5,
+    humidity: 2,
   );
   @override
   Future<Either<Failure, Weather>> getWeatherRepo() async {
@@ -31,10 +31,10 @@ void main() {
   const weather = Weather(
     country: "country",
     region: "region",
-    temp: 2.5,
-    wind: 2.5,
+    temp_c: 2.5,
+    wind_kph: 2.5,
     uv: 2.5,
-    humidity: 2.5,
+    humidity: 2,
   );
 
   setUp(() {

@@ -8,7 +8,7 @@ class OfflineFailer extends Failure{
   List<Object?> get props => [];
 }
 
-class ServerExspshen extends Failure {
+class ServerFailer extends Failure {
   @override
 
   List<Object?> get props => [];
