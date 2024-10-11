@@ -1,0 +1,12 @@
+{
+    "location": {
+        "region": "Baghdad",
+        "country": "Iraq"
+    },
+    "current": {
+        "temp_c": 34.5,
+        "wind_kph": 9.4,
+        "humidity": 9,
+        "uv": 4.0
+    }
+}

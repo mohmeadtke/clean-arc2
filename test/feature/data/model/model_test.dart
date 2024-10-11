@@ -1,12 +1,9 @@
-
-
 import 'dart:convert';
-
 import 'package:clean_arc2/feature/weather/data/model/Weather_model.dart';
 import 'package:clean_arc2/feature/weather/domain/entites/weather.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import '../../../core/fixture_reader.dart';
+import '../../../core/fixture/fixture_reader.dart';
 
 void main() {
 
