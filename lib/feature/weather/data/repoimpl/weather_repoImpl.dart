@@ -31,7 +31,8 @@ class WeatherRepoimpl implements WeatherRepo {
     if (await networkInfo.isConnected) {
        try {
          final weatherData = await weatherRemotDataSource.updateWetherRemoatData(country, region);
-         weatherLocalDataSources.cashTheWeather(weatherData);
+          weatherLocalDataSources.cashTheWeather(weatherData);
+        
          return Right(weatherData) ;
        } on ServerException {
         return Left(ServerFailer());
