@@ -21,9 +21,28 @@ class WeatherRepoimpl implements WeatherRepo {
 
 
   @override
-  Future<Either<Failure, Weather>> getWeatherRepo() {
-    
-    throw UnimplementedError();
+  Future<Either<Failure, Weather>> getWeatherRepo()async {
+    if (await networkInfo.isConnected) {
+       try {
+         final weatherData = await weatherRemotDataSource.getWeatherRemoatData();
+          weatherLocalDataSources.cashTheWeather(weatherData);
+        
+         return Right(weatherData) ;
+       } on ServerException {
+        return Left(ServerFailer());
+       }
+    }else{
+      
+      try {
+        final cashData =await weatherLocalDataSources.getWeather();
+
+        return Right(cashData);
+
+      }on OfflineException {
+        return  Left(OfflineFailer());
+      }
+
+    }
   }
 
   @override

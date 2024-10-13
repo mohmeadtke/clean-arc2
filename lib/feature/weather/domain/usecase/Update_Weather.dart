@@ -8,9 +8,9 @@ class UpdateWeather {
 
   UpdateWeather({required this.weatherRepo});
 
-  Future<Either<Failure,Weather>> call(String country,String region ){
+  Future<Either<Failure,Weather>> call(String country,String region )async{
 
-    return weatherRepo.updateWetherRepo(country, region);
+    return await weatherRepo.updateWetherRepo(country, region);
 
   }
 
