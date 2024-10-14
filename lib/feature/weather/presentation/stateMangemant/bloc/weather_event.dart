@@ -10,9 +10,9 @@ sealed class WeatherEvent extends Equatable {
 
 class GetRoandomeWeatherEvent extends WeatherEvent {}
 
-class GetmeCountryWeatherEvent extends WeatherEvent {
+class GetCountryWeatherEvent extends WeatherEvent {
   final String country ;
   final String region ;
 
-  const GetmeCountryWeatherEvent({required this.country, required this.region});
+  const GetCountryWeatherEvent({required this.country, required this.region});
 }
