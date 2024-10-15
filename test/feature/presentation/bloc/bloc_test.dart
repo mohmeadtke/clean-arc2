@@ -6,7 +6,6 @@ import 'package:clean_arc2/feature/weather/domain/usecase/Update_Weather.dart';
 import 'package:clean_arc2/feature/weather/domain/usecase/get_weather_usecase.dart';
 import 'package:clean_arc2/feature/weather/presentation/stateMangemant/bloc/weather_bloc.dart';
 import 'package:dartz/dartz.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 

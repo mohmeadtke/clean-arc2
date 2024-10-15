@@ -4,7 +4,6 @@ import 'package:clean_arc2/feature/weather/domain/entites/weather.dart';
 import 'package:clean_arc2/feature/weather/domain/usecase/Update_Weather.dart';
 import 'package:clean_arc2/feature/weather/domain/usecase/get_weather_usecase.dart';
 import 'package:equatable/equatable.dart';
-import 'package:flutter/foundation.dart';
 
 part 'weather_event.dart';
 
@@ -17,7 +16,7 @@ class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
 
   WeatherBloc({required this.updateWeather,required this.getWeatherUsecase}) : super(WeatherInitial()) {
 
-      String _mapToMassgeFaliuer(Failure failure){
+      String mapToMassgeFaliuer(Failure failure){
       if(failure is ServerFailer) {
         return "server failure " ;
       }
@@ -40,7 +39,7 @@ class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
         final fialuerOrWeather =await updateWeather(event.country,event.region);
         emit(
            fialuerOrWeather.fold(
-          (failure)=>  ErorrState(massge: _mapToMassgeFaliuer(failure)) ,
+          (failure)=>  ErorrState(massge: mapToMassgeFaliuer(failure)) ,
            (weather)=> LodedState(weather: weather)) 
         );
       }else if(event is GetRoandomeWeatherEvent){
@@ -49,7 +48,7 @@ class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
 
           emit(
             fialuerOrWeatherr.fold(
-              (fialure)=> ErorrState(massge: _mapToMassgeFaliuer(fialure)),
+              (fialure)=> ErorrState(massge: mapToMassgeFaliuer(fialure)),
                (weather)=>LodedState(weather: weather) )
           );
 
