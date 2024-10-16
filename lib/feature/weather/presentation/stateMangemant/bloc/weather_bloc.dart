@@ -16,6 +16,8 @@ class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
 
   WeatherBloc({required this.updateWeather,required this.getWeatherUsecase}) : super(WeatherInitial()) {
 
+      
+
       String mapToMassgeFaliuer(Failure failure){
       if(failure is ServerFailer) {
         return "server failure " ;
@@ -30,7 +32,6 @@ class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
     }
 
 
- 
     on<WeatherEvent>((event, emit)async {
 
       if (event is GetCountryWeatherEvent){
@@ -57,6 +58,6 @@ class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
 
     });
 
-  
+  add(GetRoandomeWeatherEvent());
   }
 }

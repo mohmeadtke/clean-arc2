@@ -35,10 +35,9 @@ class WeatherRepoimpl implements WeatherRepo {
       
       try {
         final cashData =await weatherLocalDataSources.getWeather();
-
         return Right(cashData);
 
-      }on OfflineException {
+      } on OfflineException {
         return  Left(OfflineFailer());
       }
 

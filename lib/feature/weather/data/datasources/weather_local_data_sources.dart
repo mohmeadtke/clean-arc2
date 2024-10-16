@@ -30,12 +30,16 @@ final SharedPreferences sharedPreferences ;
   }
 
   @override
-  Future<WeatherModel> getWeather() {
+  Future<WeatherModel> getWeather() async{
       
       final dataFromTheCash = sharedPreferences.getString(key); 
       if (dataFromTheCash != null) {
-        return Future.value(WeatherModel.fromJson(json.decode(dataFromTheCash)));
+         
+        final weathermodle = WeatherModel.fromJsonn(jsonDecode(dataFromTheCash));
+        return weathermodle ;    
+          
       } else {
+        print("nononononono");
         throw OfflineException();
       }
     

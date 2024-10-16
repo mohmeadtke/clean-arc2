@@ -22,6 +22,20 @@ class WeatherModel  extends Weather{
 
  }
 
+  factory WeatherModel.fromJsonn(Map<String,dynamic> json){
+
+  return WeatherModel(
+    country: json["country"],
+     region: json["region"],
+      temp_c: json["temp_c"],
+       wind_kph: json["wind_kph"],
+        uv: json["uv"],
+         humidity: json["humidity"]
+         );
+
+ }
+
+
    Map<String,dynamic> toJson() {
 
     return {
