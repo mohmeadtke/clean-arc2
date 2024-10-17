@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       home: BlocProvider(
-        create: (_) => di.sl<WeatherBloc>(),
+        create: (context) => di.sl<WeatherBloc>(),
         child: WeatherPage(),
       )
     );

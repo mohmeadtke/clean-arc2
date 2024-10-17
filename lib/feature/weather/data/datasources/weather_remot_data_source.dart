@@ -60,7 +60,7 @@ class WeatherRemotDataSourceImpl implements WeatherRemotDataSource {
   @override
   Future<WeatherModel> updateWetherRemoatData(String country, String region) async {
     final response = await client.get(
-      Uri.parse("http://api.weatherapi.com/v1/current.json?key=c14e6834322b4e8f9d372148242909&q=$country/$region&aqi=no"),
+      Uri.parse("http://api.weatherapi.com/v1/current.json?key=c14e6834322b4e8f9d372148242909&q=$country$region&aqi=no"),
       // headers: {
       //   'Content-Type': 'application/json',  // Specify content type
       // },
